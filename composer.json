@@ -1,17 +1,22 @@
 {
-    "name": "kamermans/haproxy-api",
+    "name": "blizko/haproxy-api",
     "description": "PHP API for HAProxy administration",
     "type": "library",
     "license": "GPLv3",
     "keywords": [
         "haproxy"
     ],
-    "homepage": "https://github.com/kamermans/HAProxyAPI",
+    "homepage": "https://github.com/blizko/HAProxyAPI",
     "authors": [
         {
             "name": "Steve Kamerman",
             "email": "stevekamerman@gmail.com",
             "homepage": "http://www.stevekamerman.com"
+        },
+        {
+            "name": "Arturs Plisko",
+            "email": "blizko@blizko.lv",
+            "homepage": "https://www.blizko.lv"
         }
     ],
     "require": {

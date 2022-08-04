@@ -68,7 +68,7 @@ class Executor {
 		while (!feof($this->socket)) {
 			$response .= fgets($this->socket, 1024);
 		}
-		$this->closeSocket();
+		// $this->closeSocket();
 		return $response;
 	}
 	
