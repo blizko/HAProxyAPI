@@ -28,7 +28,10 @@
 
 namespace HAProxy\Command;
 
-class DisableServer extends EnableServer
+class ShutdownSessions extends EnableServer
 {
-    protected $action = 'disable';
+    public function getSocketCommand()
+    {
+        return "shutdown sessions server $this->backend/$this->server";
+    }
 }

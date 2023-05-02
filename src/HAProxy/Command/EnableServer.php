@@ -2,14 +2,14 @@
 /**
  * HAProxyAPI is a PHP API to access/administrate HAProxy via
  * UNIX Sockets, TCP Sockets and/or the HAProxy HTTP interface.
- * 
+ *
  * HAProxyAPI was written by Steve Kamerman, 2016 and is distributed
  * via GitHub at https://github.com/kamermans/HAProxyAPI
- * 
+ *
  *  @author Steve Kamerman
  *  @copyright Steve Kamerman, 2016
  *  @license GNU GPLv3
- * 
+ *
  * This file is part of HAProxyAPI.
  *
  * HAProxyAPI is free software: you can redistribute it and/or modify
@@ -28,26 +28,29 @@
 
 namespace HAProxy\Command;
 
-class EnableServer extends Base {
-	
-	protected $backend;
-	protected $server;
-	protected $action = 'enable';
-	
-	public function __construct($backend, $server) {
-		$this->backend = $backend;
-		$this->server = $server;
-	}
-	
-	public function getSocketCommand() {
-		return "$this->action server $this->backend/$this->server";
-	}
-	
-	public function getHttpCommand() {
-		return new HttpModel(array(
-			's' => $this->server,
-			'action' => $this->action,
-			'b' => $this->backend,
-		), 'post');
-	}
+class EnableServer extends Base
+{
+    protected $backend;
+    protected $server;
+    protected $action = 'enable';
+
+    public function __construct($backend, $server)
+    {
+        $this->backend = $backend;
+        $this->server = $server;
+    }
+
+    public function getSocketCommand()
+    {
+        return "$this->action server $this->backend/$this->server";
+    }
+
+    public function getHttpCommand()
+    {
+        return new HttpModel(array(
+            's' => $this->server,
+            'action' => $this->action,
+            'b' => $this->backend,
+        ), 'post');
+    }
 }
